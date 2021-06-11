@@ -8,25 +8,52 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var name = "" // элемент интерфейса с которым взаимодействует пользователь
-    @EnvironmentObject var user: UserManager // окружение из которого мы берем данные
+    
+    @EnvironmentObject var userManager: UserManager // окружение из которого мы берем данные
     
     var body: some View {
         VStack {
-            TextField("Enter your name", text: $name)
-                .multilineTextAlignment(.center)
+            UserNameTF(
+                name: $userManager.user.name,
+                nameIsValid: userManager.nameIsValid
+            )
             Button(action: registerUser) { // кнопка по которой мы переходим на основной экран
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("OK")
                 }
             }
+            .disabled(!userManager.nameIsValid)
+        }
+        .padding()
+    }
+}
+
+extension RegisterView {
+    private func registerUser(){ // действия для кнопки
+        if !userManager.user.name.isEmpty {
+            userManager.user.isRegistered.toggle()
+            DataManager.shared.saveUser(user: userManager.user)
         }
     }
-    private func registerUser(){ // действия для кнопки
-        if !name.isEmpty {
-            user.name = name //используем эти данные 
-            user.isRegister.toggle()
+}
+
+struct UserNameTF: View {
+    @Binding var name: String
+    var nameIsValid = false
+    
+    var body: some View {
+        ZStack {
+            TextField("Type your name...", text: $name)
+                .multilineTextAlignment(.center)
+            HStack {
+                Spacer()
+                Text("\(name.count)")
+                    .font(.callout)
+                    .foregroundColor(nameIsValid ? .green : .red)
+                    .padding([.top, .trailing])
+            }
+            .padding(.bottom)
         }
     }
 }

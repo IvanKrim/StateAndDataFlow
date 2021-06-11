@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct StarterView: View {
-    @EnvironmentObject var user: UserManager
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         Group { // контейнер позволяет собрать всю логику воедино
-            if user.isRegister {
-                ContentView()
+            if userManager.user.isRegistered {
+                TimerView()
             } else {
                 RegisterView()
             }
