@@ -8,6 +8,21 @@
 import Combine
 
 class UserManager: ObservableObject { // реализация синглтона аналог objectWillChange в TimeCounter
-    @Published var isRegister = false // но так как нам необходимо отслеживать всего одно логическое свойство мы используем @Published
+    
+    @Published var user = User() // так как нам необходимо следить за свойством isRegistered мы оборачиваем user в обертку Published
+    
+    var nameIsValid: Bool {
+        user.name.count >= 3
+    }
+    
+    init() {}
+    
+    init(user: User) {
+        self.user = user
+    }
+}
+
+struct User: Codable {
     var name = ""
+    var isRegistered = false
 }

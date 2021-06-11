@@ -15,6 +15,7 @@
 		0E0EA782266FF34F0043C2F2 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0EA781266FF34F0043C2F2 /* RegisterView.swift */; };
 		0E0EA784266FF49E0043C2F2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0EA783266FF49E0043C2F2 /* UserManager.swift */; };
 		0E0EA786266FF6C30043C2F2 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0EA785266FF6C30043C2F2 /* StarterView.swift */; };
+		0E16B2D926734714003DE7C5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16B2D826734714003DE7C5 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0E0EA781266FF34F0043C2F2 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		0E0EA783266FF49E0043C2F2 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		0E0EA785266FF6C30043C2F2 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
+		0E16B2D826734714003DE7C5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0E0EA785266FF6C30043C2F2 /* StarterView.swift */,
 				0E0EA77F266FEC6D0043C2F2 /* TimeCounter.swift */,
 				0E0EA783266FF49E0043C2F2 /* UserManager.swift */,
+				0E16B2D826734714003DE7C5 /* DataManager.swift */,
 				0E0EA774266FE6C90043C2F2 /* Assets.xcassets */,
 				0E0EA779266FE6C90043C2F2 /* Info.plist */,
 				0E0EA776266FE6C90043C2F2 /* Preview Content */,
@@ -153,6 +156,7 @@
 				0E0EA780266FEC6D0043C2F2 /* TimeCounter.swift in Sources */,
 				0E0EA782266FF34F0043C2F2 /* RegisterView.swift in Sources */,
 				0E0EA786266FF6C30043C2F2 /* StarterView.swift in Sources */,
+				0E16B2D926734714003DE7C5 /* DataManager.swift in Sources */,
 				0E0EA773266FE6C70043C2F2 /* ContentView.swift in Sources */,
 				0E0EA784266FF49E0043C2F2 /* UserManager.swift in Sources */,
 				0E0EA771266FE6C70043C2F2 /* StateAndDataFlowApp.swift in Sources */,
