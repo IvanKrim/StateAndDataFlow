@@ -5,31 +5,29 @@
 //  Created by Kalabishka Ivan on 11.06.2021.
 //
 
-import Foundation
+import SwiftUI
 
 class DataManager {
     
     static let shared = DataManager()
     
-    private let userDefaults = UserDefaults.standard
-    private let userDataKey = "userManager"
+    @AppStorage("user") private var userData: Data?
     
     private init() {}
     
     func saveUser(user: User) {
-        guard let userDate = try? JSONEncoder().encode(user) else { return }
-        userDefaults.set(userDate, forKey: userDataKey)
+        userData = try? JSONEncoder().encode(user)
+        
     }
     
     func loadUser() -> User {
-        guard let userData = userDefaults.object(forKey: userDataKey) as? Data else { return User() }
-        guard let user = try? JSONDecoder().decode(User.self, from: userData) else { return User() }
+        guard let user = try? JSONDecoder().decode(User.self, from: userData ?? Data()) else { return User() }
         return user
     }
     
     func clear(userManager: UserManager) {
         userManager.user.isRegistered = false
         userManager.user.name = ""
-        userDefaults.removeObject(forKey: userDataKey)
+        userData = nil
     }
 }
